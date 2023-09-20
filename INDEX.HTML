@@ -23,19 +23,28 @@
                 }
             });
 
-        function redirectURL(country) {
-            // Agrega lógica personalizada para redirigir según el país aquí
-            // Por ejemplo:
-            if (country === 'US') {
-                window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
-            } else if (country === 'DO') {
-                window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
-            } else {
-                // Si no se especifica un redireccionamiento para un país específico,
-                // redirige al scriptHack o a otra URL de respaldo
-                window.location.href = urlPromocion;
-            }
-        }
+function redirectURL(country) {
+    // Agrega lógica personalizada para redirigir según el país aquí
+    if (country === 'MX') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else if (country === 'US') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else if (country === 'DO') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else if (country === 'BR') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else if (country === 'AU') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else if (country === 'FJ') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/'; // Agrega URL para Fiji
+    } else if (country === 'PL') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/'; // Agrega URL para Polonia
+    } else {
+        // Si no se especifica un redireccionamiento para un país específico,
+        // redirige al scriptHack o a otra URL de respaldo
+        window.location.href = urlPromocion;
+    }
+}
     </script>
 </body>
 </html>
